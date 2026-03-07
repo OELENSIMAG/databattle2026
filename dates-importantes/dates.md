@@ -1,6 +1,6 @@
 Jour de la semaine | Date | Notes | Statut
 --- | --- | --- | ---
-Vendredi | 06 mars 2026 | Questionnaire d'avancement à remplir | on going
+Vendredi | 06 mars 2026 | Questionnaire d'avancement à remplir : https://framaforms.org/questionnaire-semaine-1-data-battle-2026-ia-pau-1772737927 | on going
 Samedi | 07 mars 2026 | | on going
 Dimanche | 08 mars 2026 | |
 Lundi | 09 mars 2026 | 18h - Visioconférence avec les mentors et l'équipe de Meteorage et retours sur le questionnaire de vendredi |
