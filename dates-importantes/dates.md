@@ -20,8 +20,8 @@ Dimanche | 22 mars 2026 | |
 Lundi | 23 mars 2026 | 18h - Visioconférence avec les mentors et l'équipe de Meteorage et retours sur le questionnaire de vendredi |
 Mardi | 24 mars 2026 | |
 Mercredi | 25 mars 2026 | |
-Jeudi | 26 mars 2026 | Présentation des projets et sélection des gagnants - 12h-14h : Jury de poule - Au soir : Annonce des finalistes |
-Vendredi | 27 mars 2026 | |
+Jeudi | 26 mars 2026 |  |
+Vendredi | 27 mars 2026 | Présentation des projets et sélection des gagnants - 12h-14h : Jury de poule - Au soir : Annonce des finalistes|
 Samedi | 28 mars 2026 | |
 Dimanche | 29 mars 2026 | |
 Lundi | 30 mars 2026 | |
