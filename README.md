@@ -1,44 +1,66 @@
-# Data Battle 2026
+<h1>
+	<img src="infomation/images/logo_databattle2026.png" alt="Logo DataBattle 2026" width="56" style="vertical-align: middle;" />
+	Data Battle 2026
+</h1>
 
-## Au programme du DB26
+Projet Data Battle 2026: analyse de donnees d'orages et prediction de fin d'alerte.
 
-🛠️ **Objectif :** Cette année, la Data Battle 2026 vous propose de révéler vos compétences dans le monde de la météo. Pendant 3 semaines,
+## Quick Start
 
-⚡ **Votre mission :** prévoir l'évolution d'un orage, plus précisément d'estimer une probabilité de la fin de l'orage. En particulier, certaines zones sensibles, comme les aéroports, doivent surveiller de près la fin des orages afin de reprendre leur activité et chaque minute compte.
+### 1. Creer l'environnement virtuel
 
-Les technologies actuelles permettent déjà une excellente anticipation de l'arrivée d'un orage. Toutefois, déterminer son moment exact de fin reste complexe. Aujourd'hui les alertes restent actives pendant une durée fixe, typiquement 30 à 60 minutes après l'occurrence du dernier éclair dans la zone de surveillance. Pour certains secteurs, notamment les aéroports, où chaque minute compte, cette méthode montre ses limites. Votre objectif sera donc de développer un modèle probabiliste capable d'estimer la fin réelle d'un orage, en analysant la dynamique spatio-temporelle des éclairs dans un rayon de 50 km autour de plusieurs aéroports européens.
+Depuis la racine du projet:
 
-Un deuxième axe est d'analyser les tendances d'orages pour chaque aéroport. En effet, chaque lieu a une condition géographique et météorologique particulière. Une analyse intéressante serait d'identifier les spécificités de chaque lieu et les principaux types d'orage existant dans les données.
+```bash
+python3 -m venv .venv
+```
 
-À partir des données de meteorage, votre objectif sera donc de fournir les analyses permettant aux clients de meteorage de subir la foudre le moins possible!
+Activation sur macOS/Linux:
 
----
+```bash
+source .venv/bin/activate
+```
 
-## 📌 Notre partenaire METEORAGE
+Activation sur Windows (PowerShell):
 
-Meteorage est une entreprise qui depuis 40 ans a déployé un réseau de capteurs sur toute l'Europe permettant d'anticiper, prévenir et gérer les risques d'orage. Ces antennes sont capables de détecter un éclair à des centaines de kilomètres. Des techniques de triangulation permettent ensuite de déterminer la localisation et la date précise de chaque impact. Cette connaissance permet à Meteorage d'aider ses clients à atténuer les effets néfastes des orages et de la foudre sur leur activité, permettant l'anticipation, l'adaptation et une meilleure prévention des risques.
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
 
----
+### 2. Installer les dependances
 
-## 📌 Avec quelles données ?
+```bash
+pip install -r requirements.txt
+```
 
-🛠️ ⚡ Elles se composent de la distribution de 230K points d'impacts éclairs (localisation, et date) dans un rayon de 50 km autour de 6 aéroports sur une période de 10 années. Cela représente des centaines de cas d'orage. Ces données tabulaires sont relativement légères, évitant ainsi la lourdeur des applications de Deep Learning, tout en conservant des défis de data science très intéressants avec une caractérisation de corrélations spatio-temporelles, à travers différentes tendances dépendant de la géographie, et un résultat à atteindre qui est non pas une classification, mais la construction d'une probabilité de risque. Plus précisément, il s'agit de:
+### 3. Lancer les notebooks
 
-➡️ la localisation précise de chaque impact,
+- `src/notebook/analyse_data.ipynb` : analyse de donnees
+- `src/notebook/model.ipynb` : modele predictif
 
-➡️ l'horodatage millimétré,
+### 4. Lancer la demo Streamlit
 
-➡️ les zones d'étude de 50 km autour de plusieurs aéroports,
+```bash
+cd src
+streamlit run app.py
+```
 
-➡️ plusieurs centaines de cas d'orage.
+Puis ouvrir l'URL locale affichee dans le terminal.
 
----
+## Use Case
 
-## Que veut dire une alerte ?
+![Use Case](infomation/images/use_case.png)
 
-Il est définit un cercle de 20 km autour d'un point représentant un aéroport. L'alerte commence quand un impact de foudre a lieu dans cette zone. L'alerte est terminée, à la première période de 30 minutes sans impact d'éclair dans cette zone. C'est ce moment de fin d'alerte qu'il s'agira d'estimer pour gagner la data battle.
+<h2>
+	<img src="infomation/images/Grenoble%20INP%20-%20Logo.png" alt="Grenoble INP Logo" width="120" style="vertical-align: middle;" />
+	Equipe
+</h2>
 
+Nom de l'equipe: `Les marins d'eau douce`
 
-presentation faite par : 
-    - PAUL GAY 
-    - STEPHANE SCHMITT
+| Membre | Email |
+|---|---|
+| EL OUADIFI Othmane | othmane.el-ouadifi@grenoble-inp.org |
+| OUKHTITE Omar | omar.oukhtite@grenoble-inp.org |
+| IDBRAYME Omar | omar.idbrayme@grenoble-inp.org |
+| CHLIHI Mohamed Ziyad | mohamed-ziyad.chlihi@grenoble-inp.org |
