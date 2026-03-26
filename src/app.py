@@ -19,7 +19,12 @@ import xgboost as xgb
 import joblib
 import time
 import folium
+from pathlib import Path
 from streamlit_folium import st_folium
+
+BASE_DIR = Path(__file__).resolve().parent
+GENERATED_DIR = BASE_DIR / 'generated'
+TRAIN_DATA_PATH = BASE_DIR.parent / 'data' / 'data_train_databattle2026' / 'segment_alerts_all_airports_train.csv'
 
 # ─────────────────────────────────────────────────────────────────────────────
 # CONFIG PAGE
@@ -111,19 +116,32 @@ AIRPORT_COORDS = {
 
 @st.cache_resource
 def load_model():
+    model_path = GENERATED_DIR / 'modele_fin_orage.json'
+    label_encoder_path = GENERATED_DIR / 'label_encoder_airport.pkl'
+    feature_cols_path = GENERATED_DIR / 'feature_cols.pkl'
+
+    missing_files = [
+        str(path) for path in [model_path, label_encoder_path, feature_cols_path]
+        if not path.exists()
+    ]
+    if missing_files:
+        raise FileNotFoundError(
+            'Fichiers modèle introuvables: ' + ', '.join(missing_files)
+        )
+
     model = xgb.Booster()
-    model.load_model('modele_fin_orage.json')
-    le           = joblib.load('label_encoder_airport.pkl')
-    feature_cols = joblib.load('feature_cols.pkl')   # ← ajouter
+    model.load_model(str(model_path))
+    le           = joblib.load(label_encoder_path)
+    feature_cols = joblib.load(feature_cols_path)
     return model, le, feature_cols
 
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv(
-        '../data_train_databattle2026/segment_alerts_all_airports_train.csv',
-        parse_dates=['date']
-    )
+    if not TRAIN_DATA_PATH.exists():
+        raise FileNotFoundError(f'Dataset introuvable: {TRAIN_DATA_PATH}')
+
+    df = pd.read_csv(TRAIN_DATA_PATH, parse_dates=['date'])
     df = df.sort_values('date').reset_index(drop=True)
     # Filtrer Pise 2016 IC
     mask = (
