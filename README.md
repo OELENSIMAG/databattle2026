@@ -51,6 +51,10 @@ Puis ouvrir l'URL locale affichee dans le terminal.
 
 ![Use Case](infomation/images/use_case.png)
 
+## Solution
+
+![Solution](infomation/images/solution.png)
+
 <h2>
 	<img src="infomation/images/Grenoble%20INP%20-%20Logo.png" alt="Grenoble INP Logo" width="120" style="vertical-align: middle;" />
 	Equipe
