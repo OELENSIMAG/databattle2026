@@ -52,6 +52,7 @@ Puis ouvrir l'URL locale affichee dans le terminal.
 ![Use Case](infomation/images/use_case.png)
 
 ## Solution
+Un enregistrement de la solution est disponible sur le lien (drive) suivant : https://drive.google.com/file/d/1jhXvzW-WzY0t0s3XCgiIc8-RkxX4QHCN/view?usp=sharing
 
 ![Solution](infomation/images/solution.png)
 
